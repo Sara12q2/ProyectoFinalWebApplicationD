@@ -1,0 +1,13 @@
+public Connection obtenerConexion() { 
+        String usuario = "tsrjuulvshvrdb";
+        String clave = "fcddef80d1bcca1ee0210d0ff13171925557c0092d0c79a2b89da321f88f9ada";
+        String url = "jdbc:postgresql://ec2-34-236-87-247.compute-1.amazonaws.com:5432/d3at1e0qnhrgfe";
+        String driverPostgreSql = "org.postgresql.Driver";
+        
+        Class.forName(driverPostgreSql);
+        conexion = DriverManager.getConnection(url, usuario, clave);
+        
+        Logger.getLogger(deudaDAO.class.getName()).log(Level.SEVERE, null, e);
+        
+        return conexion;
+    }
