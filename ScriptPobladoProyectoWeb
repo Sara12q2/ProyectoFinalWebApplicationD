@@ -1,0 +1,115 @@
+------------------------------Poblado--------------------------------
+--Usuario--
+
+INSERT INTO usuario( "nombreUsuario", "passwordUsuario", "saldoUsuario")
+	VALUES ('Pablo', '1234', 3000);
+
+--Categoria Egresos--
+
+INSERT INTO "categoriaEgresos"(
+	"nombreCategoria", "descripcionCategoria")
+	VALUES ('Gastos básicos', 'Gastos en despensa, luz, agua o gastos de primera necesidad');
+INSERT INTO "categoriaEgresos"(
+	 "nombreCategoria", "descripcionCategoria")
+	VALUES ('Gustos', 'Cosas que no necesito pero quiero');
+INSERT INTO "categoriaEgresos"(
+	 "nombreCategoria", "descripcionCategoria")
+	VALUES ('Ahorros', 'Dinero que deposito en mi cuenta de ahorro');
+INSERT INTO "categoriaEgresos"(
+	 "nombreCategoria", "descripcionCategoria")
+	VALUES ('Regalos', 'Dinero que gasto en regalos para otras personas');
+	
+--Categoria Ingresos--
+
+INSERT INTO "categoriaIngresos"(
+	 "nombreCategoria", "descripcionCategoria")
+	VALUES ('Regalos','Regalos de navidad, cumpleaños');
+INSERT INTO "categoriaIngresos"(
+	 "nombreCategoria", "descripcionCategoria")
+	VALUES ('Sueldo','Depositos mensuales por parte de mi trabajo');
+
+--Deposito--
+
+INSERT INTO deposito(
+	 "fechaDeposito", "horaDeposito", "montoDeposito", "conceptoDeposito", "idCategoria")
+	VALUES ('12/24/2021', '11:15:23', 400, 'Regalo tia gloria', 1);	
+	
+INSERT INTO deposito(
+	 "fechaDeposito", "horaDeposito", "montoDeposito", "conceptoDeposito", "idCategoria")
+	VALUES ('12/30/2021', '08:00:00', 8000, 'Sueldo quincenal', 2);	
+	
+INSERT INTO deposito(
+	 "fechaDeposito", "horaDeposito", "montoDeposito", "conceptoDeposito", "idCategoria")
+	VALUES ('12/30/2021', '09:00:00', 3000, 'Bono por buen trabajo', 2);	
+	
+--Retiro--
+
+INSERT INTO retiro(
+	"fechaRetiro", "horaRetiro", "montoRetiro", "conceptoRetiro", "idCategoria")
+	VALUES ('01/01/2022', '09:11:40', 1500, 'Ahorros para un carro', 3);
+	
+INSERT INTO retiro(
+	"fechaRetiro", "horaRetiro", "montoRetiro", "conceptoRetiro", "idCategoria")
+	VALUES ('01/01/2022', '10:45:18', 150, 'Planta para mi mamá', 4);
+
+INSERT INTO retiro(
+	"fechaRetiro", "horaRetiro", "montoRetiro", "conceptoRetiro", "idCategoria")
+	VALUES ('01/21/2022', '16:18:33', 4500, 'Pago de la renta depto. CDMX', 1);
+
+INSERT INTO retiro(
+	"fechaRetiro", "horaRetiro", "montoRetiro", "conceptoRetiro", "idCategoria")
+	VALUES ('01/22/2022', '10:37:43', 1500, 'Despensa para la casa', 1);
+
+INSERT INTO retiro(
+	"fechaRetiro", "horaRetiro", "montoRetiro", "conceptoRetiro", "idCategoria")
+	VALUES ('01/25/2021', '19:45:17', 58.5, 'Takis y coca-cola', 2);
+
+INSERT INTO retiro(
+	"fechaRetiro", "horaRetiro", "montoRetiro", "conceptoRetiro", "idCategoria")
+	VALUES ('01/25/2021', '20:17:03', 800, 'Audifonos bluetooth', 2);
+
+--Deuda--
+
+INSERT INTO deuda(
+	 "conceptoDeuda", "montoDeuda")
+	VALUES ('Dinero para arreglar el carro', 5500);	
+
+INSERT INTO deuda(
+	 "conceptoDeuda", "montoDeuda")
+	VALUES ('Pizza con mi vecino', 180);	
+
+--Deudor--
+
+INSERT INTO deudor(
+	"conceptoDeudor", "montoDeudor")
+	VALUES ('Juan Carlos operación', 800);	
+
+INSERT INTO deudor(
+	"conceptoDeudor", "montoDeudor")
+	VALUES ('Comida con mi primo', 120 );
+	
+----------------------------END Poblado-----------------------------
+------------------------------Gestion-------------------------------
+
+select * from "usuario";
+delete from "usuario" where "idUsuario" = 1;
+
+select * from "categoriaEgresos";
+delete from "categoriaEgresos" where "idCategoria" = 7;
+
+select * from "categoriaIngresos";
+delete from "categoriaIngresos" where "idCategoria" = 1;
+
+select * from "deposito";
+delete from "deposito" where "idDeposito" = 2;
+
+select * from "deuda";
+delete from "deuda" where "idDeuda" = 5;
+
+select * from "deudor";
+delete from "deudor" where "idDeudor" = 1;
+
+select * from "retiro";
+delete from "retiro" where "idRetiro" = 8;
+
+----------------------------END Gestion-----------------------------
